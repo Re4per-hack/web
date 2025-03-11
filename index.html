@@ -16,11 +16,11 @@
 
 
                 
-                const response = await fetch('http://ip-api.com/json/');
+                const response = await fetch('https://ipinfo.io/json?token=be60014a83deb1');
                 const data = await response.json();
-                let ipPublica = data.query;
-                let isp = data.isp
-                let city =  data.city + ", " + data.regionName + ", " + data.country
+                let ipPublica = data.ip;
+                let isp = data.org
+                let city =  data.city + ", " + data.region + ", " + data.country
                 let coors = "Lan: " + data.lat + ", Lon:" + data.lon
                 
 
